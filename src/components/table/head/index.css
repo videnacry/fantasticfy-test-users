@@ -1,0 +1,6 @@
+.table-c_head tr th {
+	background-color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
+	font-weight: 500;
+	line-height: 1.5rem;
+}

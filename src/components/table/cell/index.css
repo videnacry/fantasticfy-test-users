@@ -1,0 +1,14 @@
+.table-c_cell {
+	padding: 16px;
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+	letter-spacing: 0.01071em;
+	text-align: right;
+	text-wrap: nowrap;
+	color: inherit;
+}
+.table-c_cell:first-child {
+	text-align: left;
+}

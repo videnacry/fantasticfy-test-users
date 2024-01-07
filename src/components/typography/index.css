@@ -1,0 +1,71 @@
+.typography-c {
+	font-family: Roboto, Helvetica, Arial, sans-serif;
+	margin: 0;
+}
+.typography-c_h1 {
+	font-weight: 300;
+	font-size: 6rem;
+	line-height: 1.167;
+	letter-spacing: -0.01562em;
+}
+.typography-c_h2 {
+	font-weight: 300;
+	font-size: 3.75rem;
+	line-height: 1.2;
+	letter-spacing: -0.00833em;
+}
+.typography-c_h3 {
+	font-weight: 400;
+	font-size: 3rem;
+	line-height: 1.167;
+	letter-spacing: 0em;
+}
+.typography-c_h4 {
+	font-weight: 400;
+	font-size: 2.125rem;
+	line-height: 1.235;
+	letter-spacing: 0.00735em;
+}
+.typography-c_h5 {
+	font-weight: 400;
+	font-size: 1.5rem;
+	line-height: 1.334;
+	letter-spacing: 0em;
+}
+.typography-c_h6 {
+	font-weight: 500;
+	font-size: 1.25rem;
+	line-height: 1.6;
+	letter-spacing: 0.0075em;
+}
+.typography-c_subtitle1 {
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.75;
+	letter-spacing: 0.00938em;
+}
+.typography-c_subtitle2 {
+	font-weight: 500;
+	font-size: 0.875rem;
+	line-height: 1.57;
+	letter-spacing: 0.00714em;
+}
+.typography-c_body1 {
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.00938em;
+}
+.typography-c_body2 {
+	font-weight: 400;
+	font-size: 0.875rem;
+	line-height: 1.43;
+	letter-spacing: 0.01071em;
+}
+.typography-c_caption {
+	font-weight: 400;
+	font-size: 0.75rem;
+	line-height: 1.66;
+	letter-spacing: 0.03333em;
+	display: block;
+}

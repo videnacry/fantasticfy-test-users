@@ -2,7 +2,6 @@ import {
 	FormEvent,
 	useState,
 	CSSProperties,
-	useMemo,
 	useEffect,
 	useRef,
 	MutableRefObject,
@@ -14,16 +13,15 @@ type Props = {
 	label: string
 	value: string
 	onInput: (e: FormEvent<HTMLInputElement>) => void
+	onFocus?: () => void
+	onBlur?: () => void
 	style?: CSSProperties
 }
-const TextField = ({ label, value, onInput, style }: Props) => {
+const TextField = ({ label, value, onInput, onFocus=()=>{}, onBlur=()=>{}, style }: Props) => {
 	const [hasFocus, setHasFocus] = useState(false)
-	const id = useMemo(() => {
-		const num = Math.floor(Math.random() * 10)
-		return num + label
-	}, [label])
-	const input: MutableRefObject<HTMLInputElement | null> = useRef(null)
 
+	const input: MutableRefObject<HTMLInputElement | null> = useRef(null)
+	const id = 'text-field-id-' + label
 	useEffect(() => {
 		if (document.activeElement == input.current) setHasFocus(true)
 	}, [])
@@ -46,13 +44,15 @@ const TextField = ({ label, value, onInput, style }: Props) => {
 					onInput={onInput}
 					onFocus={() => {
 						setHasFocus(true)
+						onFocus()
 					}}
 					onBlur={() => {
 						setHasFocus(false)
+						onBlur()
 					}}
 					ref={(ref) => (input.current = ref)}
 				/>
-				<fieldset className="text-field-c_fieldset">
+				<fieldset className="text-field-c_fieldset" aria-hidden="true">
 					<legend className="text-field-c_legend">
 						<span className="text-field-c_legend_span">{label}</span>
 					</legend>

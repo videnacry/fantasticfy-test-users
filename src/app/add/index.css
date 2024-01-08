@@ -1,0 +1,18 @@
+.add-p {
+	box-sizing: border-box;
+	max-width: 444px;
+	margin: auto;
+}
+.add-p_container {
+	margin-top: 64px;
+	display: flex;
+	flex-direction: column;
+	-webkit-box-align: center;
+	align-items: center;
+}
+@media (min-width: 600px) {
+	.add-p {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}

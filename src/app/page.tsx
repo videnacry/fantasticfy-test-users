@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import {
 	TableBody,
 	TableCell,
@@ -6,8 +7,9 @@ import {
 	TableRow,
 	Table,
 } from '../components/table'
+import Typography from '../components/typography'
 
-type userType = {
+type UserType = {
 	_id: string
 	name: string
 	email: string
@@ -32,7 +34,7 @@ const getTableHead = (titles: string[]) => (
 	</TableHead>
 )
 
-const getTableBody = (users: userType[]) => (
+const getTableBody = (users: UserType[]) => (
 	<TableBody>
 		{users.map(({ _id, name, email, username }) => (
 			<TableRow key={'row ' + _id}>
@@ -46,13 +48,20 @@ const getTableBody = (users: userType[]) => (
 )
 
 export default async function Home() {
-	const response = await fetch('http://localhost:3000/api/users')
+	const response = await fetch(process.env.API_USERS??'', {cache: 'no-store'})
 	const result = await response.json()
 	const titles = ['Nº', 'Nombre', 'Correo', 'Nombre de usuario']
-	const users: userType[] = result?.users || [userExample]
+	const users: UserType[] = result?.users || [userExample]
 
 	return (
 		<main style={{maxWidth: '1200px', margin:'auto'}}>
+			<header style={{display:'flex', justifyContent:'space-between', alignItems:'center', margin:'16px 0 24px 0'}}>
+				<div>
+					<Typography component='h1' variant='h3'>Fantasticfy</Typography>
+					<Typography component='p' variant='subtitle1'>Prueba técnica</Typography>
+				</div>
+				<Link href={'/add'}>Añadir usuario</Link>
+			</header>
 			<TableContainer style={{minWidth: '1000px'}}>
 				<Table>
 					{getTableHead(titles)}

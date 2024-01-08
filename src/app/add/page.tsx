@@ -9,6 +9,7 @@ import Button from '@/src/components/button';
 import Grid from '@/src/components/grid';
 import './index.css';
 import { initialState, reducer, stateFields, type StateField } from './reducer';
+import Link from 'next/link';
 
 export default function AddUser() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -68,6 +69,7 @@ export default function AddUser() {
   }, [state, fieldCheckHandler]);
 
   return (
+    <>
     <main className="add-p">
       <form className="add-p_container" onSubmit={(e) => e.preventDefault()}>
         <Avatar>{<img src={PersonAddIcon.src} width="60%" />}</Avatar>
@@ -94,9 +96,13 @@ export default function AddUser() {
             <Button onClick={addUser} style={{ width: '100%', marginTop: '16px' }}>
               Nuevo usuario
             </Button>
+            <Button onClick={() => {}} style={{ width: '100%', marginTop: '16px' }}>
+              <Link href={'/'} style={{color:'white', textDecoration:'none'}}>Ir a tabla de usuarios</Link>
+            </Button>
           </Grid>
         </Grid>
       </form>
     </main>
+    </>
   );
 }

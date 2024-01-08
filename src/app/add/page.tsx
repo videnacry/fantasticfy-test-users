@@ -61,7 +61,7 @@ export default function AddUser() {
           }
         } else {
           alert(`El usuario ${result.savedUser.username} ha sido creado exitosamente!`)
-          dispatch({type:'set/all/error', payload:''})
+          dispatch({type:'set/all/value', payload:''})
         }
       } catch (e:any) {
         alert(e.message)
@@ -73,7 +73,7 @@ export default function AddUser() {
     <>
     <main className="add-p">
       <form className="add-p_container" onSubmit={(e) => e.preventDefault()}>
-        <Avatar>{<Image src={PersonAddIcon.src} style={{width:"60%", height:'auto'}} alt="add user icon"/>}</Avatar>
+        <Avatar>{<Image src={PersonAddIcon.src} width={60} height={60} style={{width:"60%", height:'auto'}} alt="add user icon"/>}</Avatar>
         <Typography variant="h5" component="h1">
           Nuevo usuario
         </Typography>

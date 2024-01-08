@@ -10,6 +10,7 @@ import Grid from '@/src/components/grid';
 import './index.css';
 import { initialState, reducer, stateFields, type StateField } from './reducer';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AddUser() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -72,7 +73,7 @@ export default function AddUser() {
     <>
     <main className="add-p">
       <form className="add-p_container" onSubmit={(e) => e.preventDefault()}>
-        <Avatar>{<img src={PersonAddIcon.src} width="60%" />}</Avatar>
+        <Avatar>{<Image src={PersonAddIcon.src} style={{width:"60%", height:'auto'}} alt="add user icon"/>}</Avatar>
         <Typography variant="h5" component="h1">
           Nuevo usuario
         </Typography>

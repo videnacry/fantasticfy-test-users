@@ -66,11 +66,11 @@ const Grid = ({
             )
         }
         return child
-    }), [children])
+    }), [children, childKey, space])
 
 	return (
         <>
-        {createElement(component, {className, style:fixedStyle, children: fixedChildren})}
+        {createElement(component, {className, style:fixedStyle}, fixedChildren)}
         </>
 	)
 }
